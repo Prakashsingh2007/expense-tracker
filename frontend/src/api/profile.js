@@ -9,9 +9,7 @@ export const updateProfile = async (profileData) => {
   // If profileData is FormData (for file uploads), don't set Content-Type
   // Axios will handle it correctly
   const response = await api.patch("/accounts/profile/", profileData, {
-    headers: profileData instanceof FormData ? {
-      'Content-Type': 'multipart/form-data',
-    } : {}
+    headers: profileData instanceof FormData ? {} : {}
   });
   return response.data;
 };

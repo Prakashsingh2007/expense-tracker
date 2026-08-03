@@ -20,7 +20,7 @@ class UserProfileView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        serializer = UserSerializer(request.user)
+        serializer = UserSerializer(request.user,context = {'request': request})
         return Response(serializer.data)
 
     def patch(self, request):
@@ -28,6 +28,7 @@ class UserProfileView(APIView):
             request.user,
             data=request.data,
             partial=True,
+            context = {'request': request}
         )
 
         if serializer.is_valid():
