@@ -7,7 +7,7 @@ class Transaction(models.Model):
     type = models.CharField(max_length=10, choices=[('income', 'Income'), ('expense', 'Expense')])
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='transactions')
     note = models.TextField(blank=True, null=True)
-    transaction_date = models.DateTimeField(auto_now_add=True)
+    transaction_date = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
