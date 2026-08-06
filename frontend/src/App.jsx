@@ -11,9 +11,11 @@ import Budgets from "./pages/Budgets";
 import Reports from "./pages/Reports";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import { useContext } from "react";
+import { AuthContext } from "./context/authContext";
 
 function ProtectedRoute({ children }) {
-  const token = localStorage.getItem("access");
+   const { token } = useContext(AuthContext);
 
   if (!token) {
     return <Navigate to="/" replace />;
@@ -23,7 +25,7 @@ function ProtectedRoute({ children }) {
 }
 
 function App() {
-  const token = localStorage.getItem("access");
+  const { token } = useContext(AuthContext);
 
   return (
     <BrowserRouter>

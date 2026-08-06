@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { register } from "../api/auth";
+import { register, login } from "../api/auth";
 import { Link, useNavigate } from "react-router-dom";
-
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext";
 function Register() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ function Register() {
   const [error, setError] = useState("");
 
   const navigate = useNavigate();
-
+  const { login: saveSession } = useContext(AuthContext);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -24,13 +25,28 @@ function Register() {
     };
 
     try {
+      // Register the new user
       await register(userData);
 
-      navigate("/login", {
-        state: { message: "Registration successful. You can sign in now." },
+      // Automatically log in
+      const data = await login({
+        email,
+        password,
       });
+
+      // Save session exactly like Login.jsx
+      saveSession({
+        access: data.access,
+        refresh: data.refresh,
+      });
+
+      // Redirect to dashboard
+      navigate("/dashboard");
     } catch (error) {
-      setError(error.response?.data?.detail || "Registration failed. Please check your details and try again.");
+      setError(
+        error.response?.data?.detail ||
+          "Registration failed. Please check your details and try again.",
+      );
     } finally {
       setLoading(false);
     }
@@ -40,9 +56,15 @@ function Register() {
     <div className="flex min-h-screen items-center justify-center px-4 py-10">
       <div className="app-card w-full max-w-md p-6 sm:p-8">
         <div className="mb-8 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">Create account</p>
-          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">Register</h2>
-          <p className="mt-2 text-sm text-slate-500">Set up your account to start tracking your finances.</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-600">
+            Create account
+          </p>
+          <h2 className="mt-3 text-3xl font-semibold tracking-tight text-slate-950">
+            Register
+          </h2>
+          <p className="mt-2 text-sm text-slate-500">
+            Set up your account to start tracking your finances.
+          </p>
         </div>
 
         {error ? (
@@ -53,7 +75,9 @@ function Register() {
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <label className="block">
-            <span className="mb-2 block text-sm font-medium text-slate-700">Username</span>
+            <span className="mb-2 block text-sm font-medium text-slate-700">
+              Username
+            </span>
             <input
               type="text"
               placeholder="Username"
@@ -65,7 +89,9 @@ function Register() {
           </label>
 
           <label className="block">
-            <span className="mb-2 block text-sm font-medium text-slate-700">Email</span>
+            <span className="mb-2 block text-sm font-medium text-slate-700">
+              Email
+            </span>
             <input
               type="email"
               placeholder="Email"
@@ -77,7 +103,9 @@ function Register() {
           </label>
 
           <label className="block">
-            <span className="mb-2 block text-sm font-medium text-slate-700">Password</span>
+            <span className="mb-2 block text-sm font-medium text-slate-700">
+              Password
+            </span>
             <input
               type="password"
               placeholder="Password"
@@ -95,7 +123,6 @@ function Register() {
           >
             {loading ? "Creating account..." : "Register"}
           </button>
-
         </form>
 
         <p className="mt-4 text-center text-sm text-slate-500">
@@ -107,7 +134,6 @@ function Register() {
             Login
           </Link>
         </p>
-
       </div>
     </div>
   );
