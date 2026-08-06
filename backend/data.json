@@ -1,0 +1,248 @@
+[
+{
+  "model": "accounts.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$ujmH71ui4fwjYjwTAMUtL2$T2/Im3J8o83ly4k/ESFOJP7CpELnm/b4h2p5yiyQLs4=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "alice",
+    "first_name": "alice",
+    "last_name": "sharma",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-23T07:12:54.383Z",
+    "email": "alice@example.com",
+    "bio": "",
+    "phone": "",
+    "country": "",
+    "profile_picture": "profile_pictures/profile_picture_NEuJQ95.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$DFSQS04cFHo4TOcTKddUx1$hmouj5/X6v3q0BY1gr3u4kZeytI2/eEs5hFdBQn60fQ=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "bob",
+    "first_name": "",
+    "last_name": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-23T07:13:44.846Z",
+    "email": "bob@example.com",
+    "bio": null,
+    "phone": null,
+    "country": null,
+    "profile_picture": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$WY23NnZFmP4vDcmQp8bJCQ$nbEQWjasYJL434riPZNvgTNFAxWD2e/bHZugDKh+iic=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "prakash",
+    "first_name": "Prakash",
+    "last_name": "Singh",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-07-23T10:15:09.328Z",
+    "email": "prakash@gmail.com",
+    "bio": null,
+    "phone": null,
+    "country": null,
+    "profile_picture": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "transactions.transaction",
+  "pk": 1,
+  "fields": {
+    "owner": 1,
+    "title": "Salary",
+    "amount": "50000.00",
+    "type": "income",
+    "category": 4,
+    "note": "Monthly Salary",
+    "transaction_date": "2026-07-23T09:11:19.970Z",
+    "created_at": "2026-07-23T09:11:19.970Z",
+    "updated_at": "2026-07-23T09:11:19.970Z"
+  }
+},
+{
+  "model": "transactions.transaction",
+  "pk": 2,
+  "fields": {
+    "owner": 1,
+    "title": "Groceries",
+    "amount": "2500.00",
+    "type": "expense",
+    "category": 1,
+    "note": "Big Bazaar",
+    "transaction_date": "2026-07-23T09:11:31.152Z",
+    "created_at": "2026-07-23T09:11:31.152Z",
+    "updated_at": "2026-07-23T09:11:31.152Z"
+  }
+},
+{
+  "model": "transactions.transaction",
+  "pk": 3,
+  "fields": {
+    "owner": 2,
+    "title": "Bus",
+    "amount": "400.00",
+    "type": "expense",
+    "category": 2,
+    "note": null,
+    "transaction_date": "2026-07-23T09:11:56.108Z",
+    "created_at": "2026-07-23T09:11:56.108Z",
+    "updated_at": "2026-07-23T09:11:56.108Z"
+  }
+},
+{
+  "model": "transactions.transaction",
+  "pk": 4,
+  "fields": {
+    "owner": 2,
+    "title": "Movie",
+    "amount": "700.00",
+    "type": "expense",
+    "category": 5,
+    "note": null,
+    "transaction_date": "2026-07-23T09:12:13.545Z",
+    "created_at": "2026-07-23T09:12:13.545Z",
+    "updated_at": "2026-07-23T09:12:13.545Z"
+  }
+},
+{
+  "model": "transactions.transaction",
+  "pk": 7,
+  "fields": {
+    "owner": 1,
+    "title": "again",
+    "amount": "200.00",
+    "type": "expense",
+    "category": 1,
+    "note": "",
+    "transaction_date": "2026-07-28T12:09:07.654Z",
+    "created_at": "2026-07-28T12:09:07.654Z",
+    "updated_at": "2026-08-03T15:15:21.605Z"
+  }
+},
+{
+  "model": "transactions.transaction",
+  "pk": 8,
+  "fields": {
+    "owner": 1,
+    "title": "test",
+    "amount": "5000.00",
+    "type": "expense",
+    "category": 6,
+    "note": "",
+    "transaction_date": "2026-08-03T15:15:43.036Z",
+    "created_at": "2026-08-03T15:15:43.036Z",
+    "updated_at": "2026-08-03T15:15:43.036Z"
+  }
+},
+{
+  "model": "budgets.budget",
+  "pk": 1,
+  "fields": {
+    "owner": 1,
+    "category": 2,
+    "limit": "999999.00",
+    "month": "2026-07-28",
+    "created_at": "2026-07-28T07:28:03.811Z",
+    "updated_at": "2026-07-28T07:28:03.811Z"
+  }
+},
+{
+  "model": "budgets.budget",
+  "pk": 2,
+  "fields": {
+    "owner": 1,
+    "category": 6,
+    "limit": "888888.00",
+    "month": "2026-07-21",
+    "created_at": "2026-07-28T07:29:20.038Z",
+    "updated_at": "2026-07-28T07:29:20.038Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 1,
+  "fields": {
+    "owner": 1,
+    "name": "Groceries",
+    "icon": "",
+    "color": "",
+    "created_at": "2026-07-23T07:16:47.444Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 2,
+  "fields": {
+    "owner": 1,
+    "name": "Foods",
+    "icon": "",
+    "color": "",
+    "created_at": "2026-07-23T07:16:58.349Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 4,
+  "fields": {
+    "owner": 2,
+    "name": "Transport",
+    "icon": "",
+    "color": "",
+    "created_at": "2026-07-23T09:09:36.023Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 5,
+  "fields": {
+    "owner": 2,
+    "name": "Salary",
+    "icon": "",
+    "color": "",
+    "created_at": "2026-07-23T09:09:46.694Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 6,
+  "fields": {
+    "owner": 1,
+    "name": "breakfast",
+    "icon": "",
+    "color": "",
+    "created_at": "2026-07-28T06:46:36.739Z"
+  }
+},
+{
+  "model": "categories.category",
+  "pk": 7,
+  "fields": {
+    "owner": 3,
+    "name": "food",
+    "icon": "",
+    "color": "",
+    "created_at": "2026-07-28T12:27:28.575Z"
+  }
+}
+]

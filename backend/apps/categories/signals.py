@@ -66,12 +66,10 @@ DEFAULT_CATEGORIES = [
 @receiver(post_save, sender=User)
 def create_default_categories(sender, instance, created, **kwargs):
     if created:
-        Category.objects.bulk_create([
-            Category(
+        for category in DEFAULT_CATEGORIES:
+            Category.objects.create(
                 owner=instance,
                 name=category["name"],
                 icon=category["icon"],
-                color=category["color"],
+                color=category["color"]
             )
-            for category in DEFAULT_CATEGORIES
-        ])
