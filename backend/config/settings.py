@@ -165,6 +165,7 @@ SIMPLE_JWT = {
     'JTI_CLAIM': 'jti',
 }
 CORS_ALLOWED_ORIGINS = [
+    "https://expense-tracker-77ez8693c-prakashsingh2007s-projects.vercel.app",
     "https://expense-tracker-snowy-alpha.vercel.app",
     "http://localhost:5173",
     "http://127.0.0.1:5173",
