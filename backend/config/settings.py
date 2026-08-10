@@ -165,7 +165,9 @@ SIMPLE_JWT = {
     'JTI_CLAIM': 'jti',
 }
 CORS_ALLOWED_ORIGINS = [
-    origin for origin in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if origin
+    "https://expense-tracker-snowy-alpha.vercel.app",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
 ]
 CSRF_TRUSTED_ORIGINS = [
     "https://expense-tracker-snowy-alpha.vercel.app",
