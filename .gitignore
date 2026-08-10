@@ -24,4 +24,5 @@ Thumbs.db
 *.log
 
 # Python
-*.sqlite3
+*.sqlite3backend.zip
+backend/data.json
