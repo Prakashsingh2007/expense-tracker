@@ -167,3 +167,6 @@ SIMPLE_JWT = {
 CORS_ALLOWED_ORIGINS = [
     origin for origin in os.getenv('CORS_ALLOWED_ORIGINS', '').split(',') if origin
 ]
+CSRF_TRUSTED_ORIGINS = [
+    "https://expense-tracker-snowy-alpha.vercel.app",
+]
