@@ -47,6 +47,7 @@ dill==0.4.1
 distro==1.9.0
 Django==6.0.4
 django-cors-headers==4.9.0
+gunicorn
 djangorestframework==3.16.1
 dnf==4.24.0
 dnspython==2.8.0
